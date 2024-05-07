@@ -1,11 +1,11 @@
 package main
 
 import (
+    "os"
 	"flag"
 	"github.com/BurntSushi/toml"
 	wikilink "github.com/abhinav/goldmark-wikilink"
 	"github.com/yuin/goldmark"
-	"io/ioutil"
 	"path/filepath"
 	"time"
 )
@@ -46,7 +46,7 @@ type ConfigTOML struct {
 func getIgnoredFiles(base string) (res map[string]struct{}) {
 	res = make(map[string]struct{})
 
-	source, err := ioutil.ReadFile(filepath.FromSlash(base + "/config.toml"))
+	source, err := os.ReadFile(filepath.FromSlash(base + "/config.toml"))
 	if err != nil {
 		return res
 	}

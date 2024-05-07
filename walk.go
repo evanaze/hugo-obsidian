@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io/fs"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -104,7 +103,7 @@ func walk(root, ext string, index bool, ignorePaths map[string]struct{}) (res []
 
 func getText(dir string) string {
 	// read file
-	fileBytes, err := ioutil.ReadFile(dir)
+	fileBytes, err := os.ReadFile(dir)
 	if err != nil {
 		panic(err)
 	}

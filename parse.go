@@ -2,16 +2,16 @@ package main
 
 import (
 	"bytes"
+    "os"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"io/ioutil"
 	"strings"
 )
 
 // parse single file for links
 func parse(dir, pathPrefix string) []Link {
 	// read file
-	source, err := ioutil.ReadFile(dir)
+	source, err := os.ReadFile(dir)
 	if err != nil {
 		panic(err)
 	}
