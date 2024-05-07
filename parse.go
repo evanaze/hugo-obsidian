@@ -25,7 +25,7 @@ func parse(dir, pathPrefix string) []Link {
 		panic(err)
 	}
 
-	doc, err := goquery.NewDocumentFromReader(&buf)
+	doc, _ := goquery.NewDocumentFromReader(&buf)
 	var n int
 	doc.Find("a").Each(func(i int, s *goquery.Selection) {
 		text := strings.TrimSpace(s.Text())

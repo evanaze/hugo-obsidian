@@ -7,7 +7,6 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
-
 	"github.com/adrg/frontmatter"
 	"gopkg.in/yaml.v2"
 )
