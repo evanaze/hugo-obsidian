@@ -1,5 +1,5 @@
 # Obsidian Link Scraper
-Used by [Quartz](https://github.com/jackyzha0/quartz)
+Used by [Magma](https://github.com/evanaze/magma)
 
 This repository comes to you in two parts.
 
@@ -13,10 +13,10 @@ Read Markdown from the `/content` folder and place the resulting `linkIndex.json
 
 ```shell
 # Installation
-go install github.com/jackyzha0/hugo-obsidian@latest
+go install github.com/evanaze/hugo-obsidian@latest
 
 # Run
-hugo-obsidian -input=content -output=data -index=true
+hugo-obsidian -input=content -output=assets/indicies -index=true
 ```
 
 ### Example Usage (GitHub Action)
@@ -31,10 +31,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Link Index
-        uses: jackyzha0/hugo-obsidian@v2.1
+        uses: evanaze/hugo-obsidian@v2.1
         with:
-          input: content # input folder
-          output: data   # output folder
-          index: true    # whether to index content
+          input: content            # input folder
+          output: assets/indicies   # output folder
+          index: true               # whether to index content
       ...
 ```
